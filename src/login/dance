@@ -1,0 +1,103 @@
+import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  Keyboard,
+  View,
+  TextInput,
+  TouchableWithoutFeedback,
+  Alert,
+  KeyboardAvoidingView,
+  Button,
+  Image,
+  TouchableHighlight,
+  ImageBackground,Platform,Animated
+} from 'react-native';
+
+
+
+class Dance extends React.Component {
+
+  
+
+  render() {
+    return (
+
+
+      <View style={styles.container}>
+       
+         <Text style={styles.logoText}>Where do you stand?</Text>
+      
+     <Image source ={{uri: 'https://images.unsplash.com/photo-1523450001312-faa4e2e37f0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'}}
+                                                                                     style={{ height: 300, width: 250, justifyContent: ' left', margin: 20, alignContent: 'center' }}
+/>
+
+ 
+<View style={styles.box}>
+      <TouchableHighlight
+             onPress={() => this.props.navigation.navigate('Beginner')}
+           >
+          <View style={styles.touchableButton1}>
+                       <Text style={styles.buttonText}>
+                           BEGINNER
+                       </Text>
+                   </View>
+               </TouchableHighlight>
+          
+ 
+           <TouchableHighlight
+             onPress={() => this.props.navigation.navigate(' Intermidate')}
+           >
+          <View style={styles.touchableButton1}>
+                       <Text style={styles.buttonText}>
+                           IMTERMEDIATE
+                       </Text>
+                   </View>
+               </TouchableHighlight>
+          
+          </View>
+          <View style={styles.box}>
+          <TouchableHighlight
+             onPress={() => this.props.navigation.navigate('Expert')}
+           >
+          <View style={styles.touchableButton1}>
+                       <Text style={styles.buttonText}>
+                           EXPERT
+                       </Text>
+                   </View>
+               </TouchableHighlight>
+           </View>
+           </View>
+    );
+ }
+}
+ 
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'light grey ',
+    justifyContent: 'center',
+  },
+touchableButton1: {
+        backgroundColor: 'green',
+        height: 70,
+        width: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        
+        marginBottom: 50,
+         borderRadius: 10,
+    borderWidth: 1,
+    margin:5,
+},
+box:{
+  flexDirection:'row',
+  justifyContent:'center',
+alignItems:'center',
+}
+});
+
+
+export default Dance;
